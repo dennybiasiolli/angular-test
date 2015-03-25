@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="jumbotron">
+        <h2>News del giorno</h2>
+        <div class="input-group">
+            <input ng-model="searchKey" type="text" class="form-control" placeholder="Ricerca...">
+            <span class="input-group-btn">
+                <button ng-click="GoSearch()" class="btn btn-default" type="button">Go!</button>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <p ng-show="searchKey != null && searchKey != ''">Ricerca per: {{searchKey}}</p>
+
+    <div ng-repeat="n in news | filter:searchKey" class="col-md-4">
+        <div data-articolo news="n" search-key="searchKey" />
+    </div>
+    <div class="row"></div>
+
+</div>

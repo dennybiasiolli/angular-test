@@ -1,0 +1,7 @@
+<div class="list-group">
+    <div class="list-group-item">
+        <p class="list-group-item-text">{{articolo.timestamp*1000 | date:'dd/MM/yyyy'}}</p>
+        <h2 class="list-group-item-heading">{{articolo.title | enphatize : searchKey}}</h2>
+        <p class="list-group-item-text">{{articolo.description | enphatize : searchKey}}</p>
+    </div>
+</div>
