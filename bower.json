@@ -13,5 +13,16 @@
     "angular-sanitize": "~1.2.x",
     "html5-boilerplate": "~4.3.0",
     "bootstrap": "~3.1.1"
-  }
+  },
+  "authors": [
+    "Denny Biasiolli <denny.biasiolli@gmail.com>"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/assets/libs/",
+    "test",
+    "tests"
+  ]
 }
