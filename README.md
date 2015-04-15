@@ -25,9 +25,8 @@ Finally, open `file:///path/to/angular-test/www/index.html` in your browser.
 with which to kickstart AngularJS projects. It contains a best-practice
 directory structure to ensure code reusability and maximum scalability.
 angular-test also comes prepackaged with the most popular design frameworks
-around: [Twitter Bootstrap](http://getbootstrap.com),
-[Angular UI](http://angular-ui.github.io),
-[Angular Bootstrap](http://angular-ui.github.io/bootstrap).
+around: [Angular UI](http://angular-ui.github.io),
+[Angular Material](https://material.angularjs.org).
 All you have to do is clone it and start coding!
 
 
@@ -137,8 +136,8 @@ This will read the `dependencies` (empty by default) and the `devDependencies`
 (which contains our build requirements) from `package.json` and install
 everything needed into a folder called `node_modules/`.
 
-There are many Bower packages used by `angular-test`, like Twitter Bootstrap
-and Angular UI, which are listed in `bower.js`. To install them into the
+There are many Bower packages used by `angular-test`, like Angular UI
+and Angular Material, which are listed in `bower.js`. To install them into the
 `app/assets/libs/` directory, simply run:
 
 ```sh

@@ -1,0 +1,11 @@
+<md-content>
+    <md-input-container>
+        <label>Ricerca azienda...</label>
+        <input ng-model="searchKey">
+    </md-input-container>
+    <!--<p ng-show="searchKey != null && searchKey != ''">Ricerca per: {{searchKey}}</p>-->
+
+    <md-list>
+        <div-azienda ng-repeat="a in aziende | orderBy:'ragsoc' | filter:searchKey" azienda="a" search-key="searchKey"></div-azienda>
+    </md-list>
+</md-content>

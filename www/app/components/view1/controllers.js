@@ -1,9 +1,10 @@
 'use strict';
 
-var View1Ctrl = function($scope, $routeParams, NewsRest) {
-    
+var View1Ctrl = function($scope, $rootScope, $routeParams, NewsRest) {
+    $rootScope.titolo = 'News del giorno';
+
     $scope.searchKey = $routeParams.key;
-    
+
     //$scope.news = [
     //    {
     //        title: 'Ritrovata la scatola nera dell’Airbus, ma è danneggiata',
@@ -22,15 +23,15 @@ var View1Ctrl = function($scope, $routeParams, NewsRest) {
     //    }
     //];
     $scope.news = [];
-    
+
     NewsRest.getNews().
-        success(function(data, status, headers, config) {
-          $scope.news = data;
-        }).
-        error(function(data, status, headers, config) {
-          $scope.news = null;
-        });
+    success(function(data, status, headers, config) {
+        $scope.news = data;
+    }).
+    error(function(data, status, headers, config) {
+        $scope.news = null;
+    });
 };
 
 angular.module('myApp.view1')
-    .controller('View1Ctrl', ['$scope', '$routeParams', 'NewsRest', View1Ctrl]);
+    .controller('View1Ctrl', ['$scope', '$rootScope', '$routeParams', 'NewsRest', View1Ctrl]);

@@ -1,0 +1,12 @@
+<md-item>
+    <md-item-content>
+        <div class="md-tile-content">
+            <h3><a ng-href="#/waste/azienda/{{az.id}}">{{az.ragsoc | enphatize : searchKey}}</a></h3>
+            <h4>Cod.Fiscale {{az.codfisc | enphatize : searchKey}}</h4>
+            <h4>P.IVA {{az.piva | enphatize : searchKey}}</h4>
+            <p>{{az.indirizzo | enphatize : searchKey}}</p>
+            <p>{{az.cap | enphatize : searchKey}} {{az.citta | enphatize : searchKey}} {{az.provincia | enphatize : searchKey}}</p>
+        </div>
+    </md-item-content>
+    <md-divider ng-if="!$last"></md-divider>
+</md-item>
