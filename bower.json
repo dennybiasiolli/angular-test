@@ -6,12 +6,12 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "angular": "1.2.x",
-    "angular-route": "1.2.x",
-    "angular-loader": "1.2.x",
-    "angular-mocks": "~1.2.x",
-    "angular-sanitize": "~1.2.x",
-    "bootstrap": "~3.1.1"
+    "angular": "1.3.x",
+    "angular-route": "1.3.x",
+    "angular-loader": "1.3.x",
+    "angular-mocks": "~1.3.x",
+    "angular-sanitize": "~1.3.x",
+    "angular-material": "~0.8.3"
   },
   "authors": [
     "Denny Biasiolli <denny.biasiolli@gmail.com>"
@@ -23,5 +23,8 @@
     "www/assets/libs/",
     "test",
     "tests"
-  ]
+  ],
+  "resolutions": {
+    "angular": "1.3.x"
+  }
 }

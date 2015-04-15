@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "ragsoc": "Azienda Numero Uno",
+        "piva": "01234567891",
+        "codfisc": "01234567891",
+        "indirizzo": "Via Torino 12",
+        "cap": "76587",
+        "citta": "Roma",
+        "provincia": "RM",
+        "timestamp": "1426848122"
+    },
+    {
+        "id": 2,
+        "ragsoc": "Seconda Ditta",
+        "piva": "45789632145",
+        "codfisc": "45789632145",
+        "indirizzo": "Via Verdi 17",
+        "cap": "12345",
+        "citta": "Messina",
+        "provincia": "ME",
+        "timestamp": "1420878122"
+    },
+    {
+        "id": 3,
+        "ragsoc": "Tre scarichi",
+        "piva": "13654785402",
+        "codfisc": "13654785402",
+        "indirizzo": "Via Parigi 3",
+        "cap": "45789",
+        "citta": "Palermo",
+        "provincia": "PA",
+        "timestamp": "1413838122"
+    }
+]
