@@ -16,6 +16,8 @@ angular.module('myApp', [
 
     'myApp.waste',
 
+    'myApp.triathlon',
+
     'myApp.version'])
 
     .config(['$routeProvider', '$mdThemingProvider', function($routeProvider, $mdThemingProvider) {
