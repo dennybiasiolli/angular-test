@@ -1,0 +1,33 @@
+<md-content>
+    <div ng-controller="triathlonCtrl" layout="column" layout-align="center center">
+        <p>Seleziona una tipologia di gara dall'elenco:</p>
+        <div layout="column">
+            <md-select ng-model="gg" md-on-open="loadDatiGare()" placeholder="Gara selezionata">
+                <md-select-label>{{ gg ? gg.Nome : 'Gara selezionata' }}</md-select-label>
+                <md-optgroup ng-value="gara" ng-repeat="gara in gare" label="{{gara.Nome}}">
+                    <md-option ng-value="tipoGara" ng-repeat="tipoGara in gara.Tipi">{{tipoGara.Nome}}</md-option>
+                </md-optgroup>
+            </md-select>
+            <div ng-if="gg">
+                <div layout="row" flex="50">
+                    <div flex>{{ gg.Sport1.Tipo }}</div>
+                    <div flex>&nbsp;</div>
+                    <div layout-align="end" ng-if="!gg.custom">{{ gg.Sport1.Distanza | number:0 }} m</div>
+                    <div layout-align="end" ng-if="gg.custom"><input required type="number" step="any" ng-model="gg.Sport1.Distanza"> m</div>
+                </div>
+                <div layout="row">
+                    <div flex>{{ gg.Sport2.Tipo }}</div>
+                    <div flex>&nbsp;</div>
+                    <div layout-align="end" ng-if="!gg.custom">{{ gg.Sport2.Distanza | number:0 }} m</div>
+                    <div layout-align="end" ng-if="gg.custom"><input required type="number" step="any" ng-model="gg.Sport2.Distanza"> m</div>
+                </div>
+                <div layout="row">
+                    <div flex>{{ gg.Sport3.Tipo }}</div>
+                    <div flex>&nbsp;</div>
+                    <div layout-align="end" ng-if="!gg.custom">{{ gg.Sport3.Distanza | number:0 }} m</div>
+                    <div layout-align="end" ng-if="gg.custom"><input required type="number" step="any" ng-model="gg.Sport3.Distanza"> m</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</md-content>

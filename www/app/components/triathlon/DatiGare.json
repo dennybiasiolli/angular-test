@@ -1,0 +1,152 @@
+[
+    {
+        "Nome": "TRIATHLON",
+        "Tipi": [
+            {
+                "Nome": "Super Lungo o Ironman",
+                "Sport1": {"Tipo": "Nuoto", "Distanza": 3800},
+                "Sport2": {"Tipo": "Ciclismo", "Distanza": 180000},
+                "Sport3": {"Tipo": "Corsa", "Distanza": 42195}
+            },
+            {
+                "Nome": "Triathlon Lungo",
+                "Sport1": {"Tipo": "Nuoto", "Distanza": 4000},
+                "Sport2": {"Tipo": "Ciclismo", "Distanza": 120000},
+                "Sport3": {"Tipo": "Corsa", "Distanza": 30000}
+            },
+            {
+                "Nome": "Medio o Ironman 70.3",
+                "Sport1": {"Tipo": "Nuoto", "Distanza": 1900},
+                "Sport2": {"Tipo": "Ciclismo", "Distanza": 90000},
+                "Sport3": {"Tipo": "Corsa", "Distanza": 21097}
+            },
+            {
+                "Nome": "Olimpico",
+                "Sport1": {"Tipo": "Nuoto", "Distanza": 1500},
+                "Sport2": {"Tipo": "Ciclismo", "Distanza": 40000},
+                "Sport3": {"Tipo": "Corsa", "Distanza": 10000}
+            },
+            {
+                "Nome": "Triathlon Olimpico MTB",
+                "Sport1": {"Tipo": "Nuoto", "Distanza": 1500},
+                "Sport2": {"Tipo": "Ciclismo", "Distanza": 30000},
+                "Sport3": {"Tipo": "Corsa", "Distanza": 10000}
+            },
+            {
+                "Nome": "Triathlon Sprint",
+                "Sport1": {"Tipo": "Nuoto", "Distanza": 750},
+                "Sport2": {"Tipo": "Ciclismo", "Distanza": 20000},
+                "Sport3": {"Tipo": "Corsa", "Distanza": 5000}
+            },
+            {
+                "Nome": "Triathlon Promozionale",
+                "Sport1": {"Tipo": "Nuoto", "Distanza": 750},
+                "Sport2": {"Tipo": "Ciclismo", "Distanza": 20000},
+                "Sport3": {"Tipo": "Corsa", "Distanza": 5000}
+            },
+            {
+                "Nome": "Triathlon Sprint MTB",
+                "Sport1": {"Tipo": "Nuoto", "Distanza": 750},
+                "Sport2": {"Tipo": "Ciclismo", "Distanza": 12000},
+                "Sport3": {"Tipo": "Corsa", "Distanza": 5000}
+            },
+            {
+                "Nome": "Triathlon Super Sprint",
+                "Sport1": {"Tipo": "Nuoto", "Distanza": 400},
+                "Sport2": {"Tipo": "Ciclismo", "Distanza": 10000},
+                "Sport3": {"Tipo": "Corsa", "Distanza": 2500}
+            },
+            {
+                "Nome": "Triathlon distanza Youth",
+                "Sport1": {"Tipo": "Nuoto", "Distanza": 250},
+                "Sport2": {"Tipo": "Ciclismo", "Distanza": 8000},
+                "Sport3": {"Tipo": "Corsa", "Distanza": 2000}
+            },
+            {
+                "Nome": "Triathlon Staffetta",
+                "Sport1": {"Tipo": "Nuoto", "Distanza": 250},
+                "Sport2": {"Tipo": "Ciclismo", "Distanza": 6600},
+                "Sport3": {"Tipo": "Corsa", "Distanza": 1600}
+            },
+            {
+                "Nome": "Minitriathlon",
+                "Sport1": {"Tipo": "Nuoto", "Distanza": 200},
+                "Sport2": {"Tipo": "Ciclismo", "Distanza": 6000},
+                "Sport3": {"Tipo": "Corsa", "Distanza": 1500}
+            },
+            {
+                "Nome": "Triathlon, distanza personalizzata",
+                "Sport1": {"Tipo": "Nuoto"},
+                "Sport2": {"Tipo": "Ciclismo"},
+                "Sport3": {"Tipo": "Corsa"},
+                "custom": true
+            }
+        ]
+    },
+    {
+        "Nome": "DUATHLON",
+        "Tipi": [
+            {
+                "Nome": "Duathlon Lungo",
+                "Sport1": {"Tipo": "Corsa", "Distanza": 20000},
+                "Sport2": {"Tipo": "Ciclismo", "Distanza": 80000},
+                "Sport3": {"Tipo": "Corsa", "Distanza": 10000}
+            },
+            {
+                "Nome": "Duathlon Classico",
+                "Sport1": {"Tipo": "Corsa", "Distanza": 10000},
+                "Sport2": {"Tipo": "Ciclismo", "Distanza": 40000},
+                "Sport3": {"Tipo": "Corsa", "Distanza": 5000}
+            },
+            {
+                "Nome": "Duathlon Corto",
+                "Sport1": {"Tipo": "Corsa", "Distanza": 7000},
+                "Sport2": {"Tipo": "Ciclismo", "Distanza": 30000},
+                "Sport3": {"Tipo": "Corsa", "Distanza": 3000}
+            },
+            {
+                "Nome": "Duathlon Corto MTB",
+                "Sport1": {"Tipo": "Corsa", "Distanza": 7000},
+                "Sport2": {"Tipo": "Ciclismo", "Distanza": 20000},
+                "Sport3": {"Tipo": "Corsa", "Distanza": 3000}
+            },
+            {
+                "Nome": "Duathlon Sprint",
+                "Sport1": {"Tipo": "Corsa", "Distanza": 5000},
+                "Sport2": {"Tipo": "Ciclismo", "Distanza": 20000},
+                "Sport3": {"Tipo": "Corsa", "Distanza": 2500}
+            },
+            {
+                "Nome": "Duathlon Sprint MTB",
+                "Sport1": {"Tipo": "Corsa", "Distanza": 3000},
+                "Sport2": {"Tipo": "Ciclismo", "Distanza": 14000},
+                "Sport3": {"Tipo": "Corsa", "Distanza": 1500}
+            },
+            {
+                "Nome": "Duathlon Super Sprint anche MTB",
+                "Sport1": {"Tipo": "Corsa", "Distanza": 2500},
+                "Sport2": {"Tipo": "Ciclismo", "Distanza": 10000},
+                "Sport3": {"Tipo": "Corsa", "Distanza": 1000}
+            },
+            {
+                "Nome": "Duathlon distanza Youth",
+                "Sport1": {"Tipo": "Corsa", "Distanza": 2000},
+                "Sport2": {"Tipo": "Ciclismo", "Distanza": 8000},
+                "Sport3": {"Tipo": "Corsa", "Distanza": 1000}
+            },
+            {
+                "Nome": "Miniduathlon",
+                "Sport1": {"Tipo": "Corsa", "Distanza": 1500},
+                "Sport2": {"Tipo": "Ciclismo", "Distanza": 6000},
+                "Sport3": {"Tipo": "Corsa", "Distanza": 800}
+            },
+            {
+                "Nome": "Duathlon, distanza personalizzata",
+                "Sport1": {"Tipo": "Corsa"},
+                "Sport2": {"Tipo": "Ciclismo"},
+                "Sport3": {"Tipo": "Corsa"},
+                "custom": true
+            }
+        ]
+    }
+]
