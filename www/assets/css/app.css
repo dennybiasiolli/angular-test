@@ -3,10 +3,10 @@
 .site-sidenav,
 .site-sidenav.md-locked-open-add-active,
 .site-sidenav.md-locked-open {
-  width: 254px;
-  min-width: 254px;
-  max-width: 254px;
+    width: 254px;
+    min-width: 254px;
+    max-width: 254px;
 }
 .site-sidenav > * {
-  min-width: 218px;
+    min-width: 218px;
 }

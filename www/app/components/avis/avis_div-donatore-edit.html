@@ -1,0 +1,137 @@
+
+<div ng-controller="avisCtrl">
+
+    <md-toolbar class="md-theme-light">
+        <h2 class="md-toolbar-tools">
+            <span ng-if="dd.id">Modifica dati donatore</span>
+            <span ng-if="!dd.id">Inserimento nuovo donatore</span>
+        </h2>
+    </md-toolbar>
+
+    <md-content class="md-padding" layout="column">
+        <form ng-submit="editDonatore(dd)">
+            <input type="hidden" ng-model="dd.id">
+            <md-tabs md-selected="selectedIndex" md-border-bottom>
+                <md-tab label="Dati anagrafici" ng-disabled="false">
+                    <div layout layout-sm="column">
+                        <md-input-container style="width:80%">
+                            <label>Ragione Sociale</label>
+                            <input ng-model="dd.ragsoc">
+                        </md-input-container>
+                        <md-input-container flex>
+                            <label>Data creazione</label>
+                            <input type="date" ng-model="user.submissionDate">
+                        </md-input-container>
+                    </div>
+
+                    <div layout layout-sm="column">
+                        <md-input-container flex>
+                            <label>Codice Fiscale</label>
+                            <input ng-model="dd.codfisc" maxlength="16" placeholder="Inserisci il Codice Fiscale del donatore">
+                        </md-input-container>
+                        <md-input-container flex>
+                            <label>Partita IVA</label>
+                            <input ng-model="dd.piva" maxlength="16" placeholder="Inserisci la Partita IVA del donatore">
+                        </md-input-container>
+                    </div>
+                    <div layout layout-sm="column">
+                        <md-input-container flex>
+                            <label>Indirizzo</label>
+                            <input ng-model="dd.indirizzo" placeholder="Indirizzo dell'Unità Locale">
+                        </md-input-container>
+                    </div>
+                    <div layout layout-sm="column">
+                        <md-input-container flex>
+                            <label>CAP</label>
+                            <input ng-model="dd.cap" maxlength="5" md-maxlength="5">
+                        </md-input-container>
+                        <md-input-container flex>
+                            <label>Città</label>
+                            <input ng-model="dd.citta">
+                        </md-input-container>
+                        <md-input-container flex>
+                            <label>Provincia</label>
+                            <input ng-model="dd.provincia" maxlength="2" md-maxlength="2">
+                        </md-input-container>
+                    </div>
+                    <div layout layout-sm="column">
+                        <md-input-container flex>
+                            <label>Annotazioni</label>
+                            <textarea ng-model="dd.note" columns="1" md-maxlength="150"></textarea>
+                        </md-input-container>
+                    </div>
+                </md-tab>
+
+                <md-tab label="Tipo di attività" ng-disabled="false">
+                    <div layout layout-sm="column">
+                        <md-input-container flex>
+                            <md-checkbox ng-model="dd.isProduttore" class="md-primary" aria-label="Produttore">Produttore</md-checkbox>
+                        </md-input-container>
+                        <md-input-container flex>
+                            <md-checkbox ng-model="dd.isTrasportatore" class="md-primary" aria-label="Trasportatore">Trasportatore</md-checkbox>
+                        </md-input-container>
+                        <md-input-container flex>
+                            <md-checkbox ng-model="dd.isDestinatario" class="md-primary" aria-label="Destinatario">Destinatario</md-checkbox>
+                        </md-input-container>
+                    </div>
+                    <div layout layout-sm="column">
+                        <md-input-container flex>
+                            <md-checkbox ng-model="dd.isIntermediario" class="md-primary" aria-label="Intermediario">Intermediario</md-checkbox>
+                        </md-input-container>
+                        <md-input-container flex>
+                            <md-checkbox ng-model="dd.isLaboratorioAnalisi" class="md-primary" aria-label="Laboratorio Analisi">Laboratorio Analisi</md-checkbox>
+                        </md-input-container>
+                        <md-input-container flex>
+                            <md-checkbox ng-model="dd.isConsulente" class="md-primary" aria-label="Consulente">Consulente</md-checkbox>
+                        </md-input-container>
+                        <md-input-container flex>
+                            <md-checkbox ng-model="dd.isSoftwareHouse" class="md-primary" aria-label="Software House">Software House</md-checkbox>
+                        </md-input-container>
+                    </div>
+                    <div layout layout-sm="column">
+                    </div>
+                </md-tab>
+
+                <md-tab label="Tipologie di Trasporto" ng-disabled="!dd.isTrasportatore">
+                    <div layout layout-sm="column">
+                        <md-input-container flex>
+                            <md-checkbox ng-model="dd.isTrasportatore_C01" ng-if="dd.isTrasportatore" class="md-primary" aria-label="Categoria 1">Trasp. Categoria 1</md-checkbox>
+                            <md-checkbox ng-model="dd.isTrasportatore_C04" ng-if="dd.isTrasportatore" class="md-primary" aria-label="Categoria 4">Trasp. Categoria 4</md-checkbox>
+                            <md-checkbox ng-model="dd.isTrasportatore_C05" ng-if="dd.isTrasportatore" class="md-primary" aria-label="Categoria 5">Trasp. Categoria 5</md-checkbox>
+                            <md-checkbox ng-model="dd.isTrasportatore_C06" ng-if="dd.isTrasportatore" class="md-primary" aria-label="Categoria 6">Trasp. Categoria 6</md-checkbox>
+                            <md-checkbox ng-model="dd.isTrasportatore_C08" ng-if="dd.isTrasportatore" class="md-primary" aria-label="Categoria 8">Trasp. Categoria 8</md-checkbox>
+                            <md-checkbox ng-model="dd.isTrasportatore_C09" ng-if="dd.isTrasportatore" class="md-primary" aria-label="Categoria 9">Trasp. Categoria 9</md-checkbox>
+                            <md-checkbox ng-model="dd.isTrasportatore_C10" ng-if="dd.isTrasportatore" class="md-primary" aria-label="Categoria 10">Trasp. Categoria 10</md-checkbox>
+                        </md-input-container>
+                    </div>
+                </md-tab>
+
+                <md-tab label="Tipologie di Destinddione" ng-disabled="!dd.isDestinatario">
+                    <div layout layout-sm="column" ng-if="dd.isDestinatario">
+                        <md-input-container flex>
+                            <md-checkbox ng-model="dd.isImpiantoRecupero" class="md-primary" aria-label="Impianto di Recupero">Impianto di Recupero</md-checkbox>
+                            <md-checkbox ng-disabled="! dd.isImpiantoRecupero" ng-if="dd.isDestinatario" ng-model="dd.isImpiantoRecupero_Coinc" class="md-primary" aria-label="Impianto di Coincenermento (R1)">Impianto di Coincenermento (R1)</md-checkbox>
+                            <md-checkbox ng-disabled="! dd.isImpiantoRecupero" ng-if="dd.isDestinatario" ng-model="dd.isImpiantoRecupero_RecMat" class="md-primary" aria-label="Impianto di Recupero di Materia (R2, R3, R4, R6, R7, R8, R9)">Impianto di Recupero di Materia (R2, R3, R4, R6, R7, R8, R9)</md-checkbox>
+                            <md-checkbox ng-disabled="! dd.isImpiantoRecupero" ng-if="dd.isDestinatario" ng-model="dd.isImpiantoRecupero_Rec" class="md-primary" aria-label="Impianto di Recupero (R5, R10, R11, R12, R13)">Impianto di Recupero (R5, R10, R11, R12, R13)</md-checkbox>
+                            <md-checkbox ng-disabled="! dd.isImpiantoRecupero" ng-if="dd.isDestinatario" ng-model="dd.isImpiantoRecupero_Comp" class="md-primary" aria-label="Impianto di Compostaggio e di Digestione Anaerobica (R3)">Impianto di Compostaggio e di Digestione Anaerobica (R3)</md-checkbox>
+                        </md-input-container>
+                        <md-input-container flex>
+                            <md-checkbox ng-model="dd.isImpiantoSmaltimento" class="md-primary" aria-label="Impianto di Smaltimento">Impianto di Smaltimento</md-checkbox>
+                            <md-checkbox ng-disabled="! dd.isImpiantoSmaltimento" ng-if="dd.isDestinatario" ng-model="dd.isImpiantoSmaltimento_Disch" class="md-primary" aria-label="Discarica (D1, D5, D12)">Discarica (D1, D5, D12)</md-checkbox>
+                            <md-checkbox ng-disabled="! dd.isImpiantoSmaltimento" ng-if="dd.isDestinatario" ng-model="dd.isImpiantoSmaltimento_Incener" class="md-primary" aria-label="Inceneritore (D10)">Inceneritore (D10)</md-checkbox>
+                            <md-checkbox ng-disabled="! dd.isImpiantoSmaltimento" ng-if="dd.isDestinatario" ng-model="dd.isImpiantoSmaltimento_Smalt" class="md-primary" aria-label="Impianto di Smaltimento (D2, D3, D4, D6, D7, D13, D14, D15)">Impianto di Smaltimento (D2, D3, D4, D6, D7, D13, D14, D15)</md-checkbox>
+                            <md-checkbox ng-disabled="! dd.isImpiantoSmaltimento" ng-if="dd.isDestinatario" ng-model="dd.isImpiantoSmaltimento_Tratt" class="md-primary" aria-label="Impianto di Trattamento Cimico Fisico e Biologico (D8, D9)">Impianto di Trattamento Cimico Fisico e Biologico (D8, D9)</md-checkbox>
+                        </md-input-container>
+                    </div>
+                </md-tab>
+
+                <md-tab label="Completamento modifiche" ng-disabled="false">
+                    <md-button ng-if="dd.id" class="md-raised md-primary">Modifica</md-button>
+                    <md-button ng-if="!dd.id" class="md-raised md-primary">Aggiungi</md-button>
+                </md-tab>
+            </md-tabs>
+
+        </form>
+    </md-content>
+    </form>
+</div>

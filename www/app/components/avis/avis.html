@@ -1,0 +1,179 @@
+<md-content>
+    <!--<p ng-show="searchKey != null && searchKey != ''">Ricerca per: {{searchKey}}</p>-->
+    <md-tabs md-selected="selectedIndex" md-border-bottom>
+
+        <md-tab label="Ricerca dettagliata" ng-disabled="false">
+            <div layout layout-sm="column">
+                <md-input-container>
+                    <label>Num. Tessera</label>
+                    <input ng-model="filtri.NumTessera" ng-change="aggiornaFiltro(filtri)">
+                </md-input-container>
+                <md-select placeholder="Stato donatore" ng-model="filtri.StatoDonatore" ng-change="aggiornaFiltro(filtri)">
+                    <md-option value=""></md-option>
+                    <md-option value="Attivo">Socio Attivo</md-option>
+                    <md-option value="SSO">Socio Sostenitore</md-option>
+                    <md-option value="SEM">Socio Emerito</md-option>
+                </md-select>
+                <!--
+                <md-input-container>
+                    <label>Stato donatore</label>
+                    <input ng-model="filtri.StatoDonatore" ng-change="aggiornaFiltro(filtri)">
+                </md-input-container>
+                -->
+                <md-input-container flex>
+                    <label>Cognome</label>
+                    <input ng-model="filtri.Cognome" ng-change="aggiornaFiltro(filtri)">
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Nome</label>
+                    <input ng-model="filtri.Nome" ng-change="aggiornaFiltro(filtri)">
+                </md-input-container>
+            </div>
+            <div layout layout-sm="column">
+                <md-select placeholder="Sesso" ng-model="filtri.Sesso" ng-change="aggiornaFiltro(filtri)">
+                    <md-option value=""></md-option>
+                    <md-option value="M">Maschio</md-option>
+                    <md-option value="F">Femmina</md-option>
+                </md-select>
+                <md-select placeholder="Gruppo" ng-model="filtri.GruppoSanguigno" ng-change="aggiornaFiltro(filtri)">
+                    <md-option value=""></md-option>
+                    <md-option value="0">Gruppo 0</md-option>
+                    <md-option value="A">Gruppo A</md-option>
+                    <md-option value="B">Gruppo B</md-option>
+                    <md-option value="AB">Gruppo AB</md-option>
+                </md-select>
+                <md-select placeholder="Rh" ng-model="filtri.Rh" ng-change="aggiornaFiltro(filtri)">
+                    <md-option value=""></md-option>
+                    <md-option value="+">Rh +</md-option>
+                    <md-option value="-">Rh -</md-option>
+                </md-select>
+                <!--
+                <md-input-container style="width:10%">
+                    <label>Sesso</label>
+                    <input ng-model="filtri.Sesso" ng-change="aggiornaFiltro(filtri)">
+                </md-input-container>
+                <md-input-container style="width:10%">
+                    <label>Gruppo</label>
+                    <input ng-model="filtri.GruppoSanguigno" ng-change="aggiornaFiltro(filtri)">
+                </md-input-container>
+                <md-input-container style="width:10%">
+                    <label>Rh</label>
+                    <input ng-model="filtri.Rh" ng-change="aggiornaFiltro(filtri)">
+                </md-input-container>
+                -->
+                <md-input-container flex>
+                    <label>Nato dal</label>
+                    <input type="date" ng-model="filtri.DaDataNascita" ng-change="aggiornaFiltro(filtri)">
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Nato al</label>
+                    <input type="date" ng-model="filtri.ADataNascita" ng-change="aggiornaFiltro(filtri)">
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Iscritto dal</label>
+                    <input type="date" ng-model="filtri.DaDataIscrizione" ng-change="aggiornaFiltro(filtri)">
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Iscritto al</label>
+                    <input type="date" ng-model="filtri.ADataIscrizione" ng-change="aggiornaFiltro(filtri)">
+                </md-input-container>
+            </div>
+            <!--
+<div layout layout-sm="column">
+<md-input-container flex>
+<label>CAP uguale a</label>
+<input ng-model="filtri.CapUguale" maxlength="5" md-maxlength="5">
+</md-input-container>
+<md-input-container flex>
+<label>CAP diverso da</label>
+<input ng-model="filtri.CapDiverso" maxlength="5" md-maxlength="5">
+</md-input-container>
+<md-input-container flex>
+<label>Comune</label>
+<input ng-model="filtri.Comune">
+</md-input-container>
+<md-input-container flex>
+<label>Provincia</label>
+<input ng-model="filtri.Provincia" maxlength="2" md-maxlength="2">
+</md-input-container>
+</div>
+-->
+        </md-tab>
+
+        <md-tab label="Ricerca generica" ng-disabled="false">
+            <md-input-container>
+                <label>Ricerca numero tessera o nominativo...</label>
+                <input ng-model="filtri.searchKey" ng-change="aggiornaFiltro(filtri)">
+            </md-input-container>
+        </md-tab>
+
+    </md-tabs>
+
+    <div>
+        <button ng-disabled="currentPage == 0" ng-click="currentPage=0">
+            Inizio
+        </button>
+        <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+            &lt;&lt;
+        </button>
+        Pagina {{currentPage+1}} / {{numberOfPages()}}
+        <button ng-disabled="currentPage >= donatori.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+            &gt;&gt;
+        </button>
+        <button ng-disabled="currentPage >= (donatori.length/pageSize) - 1" ng-click="currentPage=numberOfPages() - 1">
+            Fine
+        </button>
+        <table class="pure-table pure-table-horizontal">
+            <thead>
+                <tr>
+                    <!--<th>ID</th>-->
+                    <th>Tess.</th>
+                    <th>Nominativo</th>
+                    <th>S.</th>
+                    <th>Nato/a il</th>
+                    <th>Indirizzo</th>
+                    <th>Contatti</th>
+                    <th>@</th>
+                    <th>D.Iscr</th>
+                    <th>Stato</th>
+                    <th>Ult.Don.</th>
+                    <th>Ben.</th>
+                    <th>Donazioni</th>
+                    <th>Gr/Rh</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--  | filter:searchKey -->
+                <tr ng-repeat="d in donatori | orderBy:'NumTessera' | startFrom:currentPage*pageSize | limitTo:pageSize">
+                    <!--<td>{{d.id}}</td>-->
+                    <td align="right"><a ng-href="#/avis/donatore/{{d.id}}">{{d.NumTessera}}</a></td>
+                    <td><a ng-href="#/avis/donatore/{{d.id}}">{{d.Cognome}} {{d.Nome}}</a></td>
+                    <td>{{d.Sesso}}</td>
+                    <td>{{d.DataNascita | date:'dd/MM/yyyy'}}</td>
+                    <td>{{d.Indirizzo}}<br>{{d.Cap}} {{d.Comune}} {{d.Provincia}}<span ng-if="d.Frazione"> (Fraz.{{d.Frazione}})</span></td>
+                    <td><span ng-if="d.Telefono">{{d.Telefono}} </span><span ng-if="d.Cellulare"> Cell. {{d.Cellulare}} </span><span ng-if="d.TelefonoLavoro"> Lav. {{d.TelefonoLavoro}} </span><span ng-if="d.Email"><br> <a ng-href="mailto:{{d.Email}}" target="_blank"><md-icon md-svg-icon="assets/img/icons/1432066501_common_email_envelope_mail.svg"></md-icon></a></span></td>
+                    <td></td>
+                    <td>{{d.DataIscrizione | date:'dd/MM/yy'}}</td>
+                    <td>{{d.StatoDonatore}}</td>
+                    <td>{{d.UltimaDonazione | date:'dd/MM/yy'}}</td>
+                    <td align="right">{{d.NumBenemerenze}}</td>
+                    <td align="right">{{d.DonazioniPregresse}} + {{d.DonazioniRegistrate}} = {{d.DonazioniPregresse + d.DonazioniRegistrate}}</td>
+                    <td>{{d.GruppoSanguigno}} Rh {{d.Rh}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <button ng-disabled="currentPage == 0" ng-click="currentPage=0">
+            Inizio
+        </button>
+        <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+            &lt;&lt;
+        </button>
+        Pagina {{currentPage+1}} / {{numberOfPages()}}
+        <button ng-disabled="currentPage >= data.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+            &gt;&gt;
+        </button>
+        <button ng-disabled="currentPage >= (data.length/pageSize) - 1" ng-click="currentPage=numberOfPages() - 1">
+            Fine
+        </button>
+    </div>
+</md-content>
