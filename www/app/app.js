@@ -18,6 +18,8 @@ angular.module('myApp', [
 
     'myApp.triathlon',
 
+    'myApp.avis',
+
     'myApp.version'])
 
     .config(['$routeProvider', '$mdThemingProvider', function($routeProvider, $mdThemingProvider) {

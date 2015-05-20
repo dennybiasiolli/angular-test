@@ -1,2 +1,4 @@
 /www/assets/libs
 /node_modules
+/www/app/components/avis/donatori.json
+/www/app/components/avis/donazioni.json

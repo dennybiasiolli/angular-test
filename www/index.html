@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
     <link rel="stylesheet" href="assets/libs/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <link rel="stylesheet" href="assets/css/app.css">
 </head>
 <body layout="column" ng-controller="RootCtrl">
@@ -55,6 +56,9 @@
                 </md-button>
                 <md-button class="md-primary md-hue-1" ng-href="#/triathlon" ng-click="toggleList()">
                     triathlon
+                </md-button>
+                <md-button class="md-primary md-hue-1" ng-href="#/avis" ng-click="toggleList()">
+                    AVIS
                 </md-button>
             </md-content>
 
@@ -119,6 +123,12 @@
     <script src="app/components/triathlon/controllers.js"></script>
     <script src="app/components/triathlon/filters.js"></script>
     <script src="app/components/triathlon/directives.js"></script>
+
+    <script src="app/components/avis/app.js"></script>
+    <script src="app/components/avis/services.js"></script>
+    <script src="app/components/avis/controllers.js"></script>
+    <script src="app/components/avis/filters.js"></script>
+    <script src="app/components/avis/directives.js"></script>
 
     <script src="app/components/version/version.js"></script>
     <script src="app/components/version/version-directive.js"></script>
