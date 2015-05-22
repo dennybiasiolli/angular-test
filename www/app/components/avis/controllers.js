@@ -5,9 +5,13 @@ var avisCtrl = function($scope, $rootScope, $routeParams, $location, DonatoriRes
 
     $scope.id = $routeParams.id;
     $scope.searchKey = $routeParams.searchKey;
-    $scope.filtri = [];
+    $scope.filtri = {};
     //$scope.filtri.StatoDonatore = 'Attivo';
     $scope.donatori = [];
+
+    $scope.$watch('filtri', function(){
+        $scope.aggiornaFiltro($scope.filtri);
+    }, true);
 
     $scope.currentPage = 0;
     $scope.pageSize = 20;
