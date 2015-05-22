@@ -6,76 +6,76 @@
             <div layout layout-sm="column">
                 <md-input-container>
                     <label>Num. Tessera</label>
-                    <input ng-model="filtri.NumTessera" ng-change="aggiornaFiltro(filtri)">
+                    <input ng-model="filtri.NumTessera">
                 </md-input-container>
-                <md-select placeholder="Stato donatore" ng-model="filtri.StatoDonatore" ng-change="aggiornaFiltro(filtri)">
+                <md-select placeholder="Stato donatore" ng-model="filtri.StatoDonatore">
                     <md-option value=""></md-option>
                     <md-option value="Attivo">Socio Attivo</md-option>
                     <md-option value="SSO">Socio Sostenitore</md-option>
                     <md-option value="SEM">Socio Emerito</md-option>
                 </md-select>
                 <!--
-                <md-input-container>
-                    <label>Stato donatore</label>
-                    <input ng-model="filtri.StatoDonatore" ng-change="aggiornaFiltro(filtri)">
-                </md-input-container>
-                -->
+<md-input-container>
+<label>Stato donatore</label>
+<input ng-model="filtri.StatoDonatore">
+</md-input-container>
+-->
                 <md-input-container flex>
                     <label>Cognome</label>
-                    <input ng-model="filtri.Cognome" ng-change="aggiornaFiltro(filtri)">
+                    <input ng-model="filtri.Cognome">
                 </md-input-container>
                 <md-input-container flex>
                     <label>Nome</label>
-                    <input ng-model="filtri.Nome" ng-change="aggiornaFiltro(filtri)">
+                    <input ng-model="filtri.Nome">
                 </md-input-container>
             </div>
             <div layout layout-sm="column">
-                <md-select placeholder="Sesso" ng-model="filtri.Sesso" ng-change="aggiornaFiltro(filtri)">
+                <md-select placeholder="Sesso" ng-model="filtri.Sesso">
                     <md-option value=""></md-option>
                     <md-option value="M">Maschio</md-option>
                     <md-option value="F">Femmina</md-option>
                 </md-select>
-                <md-select placeholder="Gruppo" ng-model="filtri.GruppoSanguigno" ng-change="aggiornaFiltro(filtri)">
+                <md-select placeholder="Gruppo" ng-model="filtri.GruppoSanguigno">
                     <md-option value=""></md-option>
                     <md-option value="0">Gruppo 0</md-option>
                     <md-option value="A">Gruppo A</md-option>
                     <md-option value="B">Gruppo B</md-option>
                     <md-option value="AB">Gruppo AB</md-option>
                 </md-select>
-                <md-select placeholder="Rh" ng-model="filtri.Rh" ng-change="aggiornaFiltro(filtri)">
+                <md-select placeholder="Rh" ng-model="filtri.Rh">
                     <md-option value=""></md-option>
                     <md-option value="+">Rh +</md-option>
                     <md-option value="-">Rh -</md-option>
                 </md-select>
                 <!--
-                <md-input-container style="width:10%">
-                    <label>Sesso</label>
-                    <input ng-model="filtri.Sesso" ng-change="aggiornaFiltro(filtri)">
-                </md-input-container>
-                <md-input-container style="width:10%">
-                    <label>Gruppo</label>
-                    <input ng-model="filtri.GruppoSanguigno" ng-change="aggiornaFiltro(filtri)">
-                </md-input-container>
-                <md-input-container style="width:10%">
-                    <label>Rh</label>
-                    <input ng-model="filtri.Rh" ng-change="aggiornaFiltro(filtri)">
-                </md-input-container>
-                -->
+<md-input-container style="width:10%">
+<label>Sesso</label>
+<input ng-model="filtri.Sesso">
+</md-input-container>
+<md-input-container style="width:10%">
+<label>Gruppo</label>
+<input ng-model="filtri.GruppoSanguigno">
+</md-input-container>
+<md-input-container style="width:10%">
+<label>Rh</label>
+<input ng-model="filtri.Rh">
+</md-input-container>
+-->
                 <md-input-container flex>
                     <label>Nato dal</label>
-                    <input type="date" ng-model="filtri.DaDataNascita" ng-change="aggiornaFiltro(filtri)">
+                    <input type="date" ng-model="filtri.DaDataNascita">
                 </md-input-container>
                 <md-input-container flex>
                     <label>Nato al</label>
-                    <input type="date" ng-model="filtri.ADataNascita" ng-change="aggiornaFiltro(filtri)">
+                    <input type="date" ng-model="filtri.ADataNascita">
                 </md-input-container>
                 <md-input-container flex>
                     <label>Iscritto dal</label>
-                    <input type="date" ng-model="filtri.DaDataIscrizione" ng-change="aggiornaFiltro(filtri)">
+                    <input type="date" ng-model="filtri.DaDataIscrizione">
                 </md-input-container>
                 <md-input-container flex>
                     <label>Iscritto al</label>
-                    <input type="date" ng-model="filtri.ADataIscrizione" ng-change="aggiornaFiltro(filtri)">
+                    <input type="date" ng-model="filtri.ADataIscrizione">
                 </md-input-container>
             </div>
             <!--
@@ -103,11 +103,50 @@
         <md-tab label="Ricerca generica" ng-disabled="false">
             <md-input-container>
                 <label>Ricerca numero tessera o nominativo...</label>
-                <input ng-model="filtri.searchKey" ng-change="aggiornaFiltro(filtri)">
+                <input ng-model="filtri.searchKey">
             </md-input-container>
         </md-tab>
 
     </md-tabs>
+
+
+    <md-list>
+        <md-subheader class="md-no-sticky">Elenco donatori</md-subheader>
+        <md-list-item>
+            <div layout="row">
+                <span style="width:50px">Tess.</span>
+                <span style="width:250px">Nominativo</span>
+                <span style="width:25px">S.</span>
+                <span style="width:80px">Nato/a il</span>
+                <span style="width:200px">Indirizzo</span>
+                <span style="width:150px">Contatti</span>
+                <span style="width:80px">D.Iscr</span>
+                <span style="width:80px">Stato</span>
+                <span style="width:80px">Ult.Don.</span>
+                <span style="width:40px">Ben.</span>
+                <span style="width:150px">Donazioni</span>
+                <span style="width:80px">Gr/Rh</span>
+            </div>
+            <md-divider></md-divider>
+        </md-list-item>
+        <md-list-item ng-repeat="d in donatori | orderBy:'NumTessera' | startFrom:currentPage*pageSize | limitTo:pageSize">
+            <div layout="row" style="margin:5px 0">
+                <span style="width:50px"><a ng-href="#/avis/donatore/{{d.id}}">{{d.NumTessera}}</a></span>
+                <span style="width:250px"><a ng-href="#/avis/donatore/{{d.id}}">{{d.Cognome}} {{d.Nome}}</a></span>
+                <span style="width:25px">{{d.Sesso}}</span>
+                <span style="width:80px">{{d.DataNascita | date:'dd/MM/yy'}}</span>
+                <span style="width:200px"><!--{{d.Indirizzo}}<br>{{d.Cap}} -->{{d.Comune}}<!-- ({{d.Provincia}})--><span ng-if="d.Frazione"> (Fraz.{{d.Frazione}})</span></span>
+                <span style="width:150px"><span ng-if="d.Telefono">{{d.Telefono}} </span><span ng-if="d.Cellulare"> Cell. {{d.Cellulare}} </span><span ng-if="d.TelefonoLavoro"> Lav. {{d.TelefonoLavoro}} </span><span ng-if="d.Email"><br> <a ng-href="mailto:{{d.Email}}" target="_blank"><md-icon md-svg-icon="assets/img/icons/1432066501_common_email_envelope_mail.svg"></md-icon></a></span></span>
+                <span style="width:80px">{{d.DataIscrizione | date:'dd/MM/yy'}}</span>
+                <span style="width:80px">{{d.StatoDonatore}}</span>
+                <span style="width:80px">{{d.UltimaDonazione | date:'dd/MM/yy'}}</span>
+                <span style="width:40px">{{d.NumBenemerenze}}</span>
+                <span style="width:150px"><b>{{d.DonazioniPregresse + d.DonazioniRegistrate}}</b> ({{d.DonazioniPregresse}} + {{d.DonazioniRegistrate}})</span>
+                <span style="width:80px">{{d.GruppoSanguigno}} Rh {{d.Rh}}</span>
+            </div>
+            <md-divider></md-divider>
+        </md-list-item>
+    </md-list>
 
     <div>
         <button ng-disabled="currentPage == 0" ng-click="currentPage=0">
@@ -133,7 +172,6 @@
                     <th>Nato/a il</th>
                     <th>Indirizzo</th>
                     <th>Contatti</th>
-                    <th>@</th>
                     <th>D.Iscr</th>
                     <th>Stato</th>
                     <th>Ult.Don.</th>
@@ -152,7 +190,6 @@
                     <td>{{d.DataNascita | date:'dd/MM/yyyy'}}</td>
                     <td>{{d.Indirizzo}}<br>{{d.Cap}} {{d.Comune}} {{d.Provincia}}<span ng-if="d.Frazione"> (Fraz.{{d.Frazione}})</span></td>
                     <td><span ng-if="d.Telefono">{{d.Telefono}} </span><span ng-if="d.Cellulare"> Cell. {{d.Cellulare}} </span><span ng-if="d.TelefonoLavoro"> Lav. {{d.TelefonoLavoro}} </span><span ng-if="d.Email"><br> <a ng-href="mailto:{{d.Email}}" target="_blank"><md-icon md-svg-icon="assets/img/icons/1432066501_common_email_envelope_mail.svg"></md-icon></a></span></td>
-                    <td></td>
                     <td>{{d.DataIscrizione | date:'dd/MM/yy'}}</td>
                     <td>{{d.StatoDonatore}}</td>
                     <td>{{d.UltimaDonazione | date:'dd/MM/yy'}}</td>
